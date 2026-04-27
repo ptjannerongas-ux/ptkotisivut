@@ -239,3 +239,48 @@ h1, h2 {
 .card:hover, .price-card:hover {
     transform: scale(1.03);
 }
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+
+    nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: black;
+        width: 200px;
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: white;
+    }
+}
+section:nth-child(even) {
+    background: #ffffff;
+}
+
+section:nth-child(odd) {
+    background: #f5f5f5;
+}
+.section-subtitle {
+    color: #e63946;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
