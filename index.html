@@ -4,67 +4,74 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Henkilökohtaista ja kokonaisvaltaista valmennusta. PT Janne Rongas</title>
+<title>PT Janne | Personal Trainer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
-<script src="script.js"></script>
-
 <body>
 
 <header>
     <div class="logo">PT JANNE</div>
-
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <div class="quiz">
-
-    <div class="step active">
-        <h2>Mikä on tavoitteesi?</h2>
-        <button onclick="nextStep()">Painonpudotus/Elämäntapamuutos</button>
-        <button onclick="nextStep()">Lihaskasvu</button>
-        <button onclick="nextStep()">Rasvanpoltto</button>
-        <button onclick="nextStep()">Muu</button>
-    </div>
-
-    <div class="step">
-        <h2>Sukupuoli</h2>
-        <button onclick="nextStep()">Mies</button>
-        <button onclick="nextStep()">Nainen</button>
-        <button onclick="nextStep()">Muu</button>
-    </div>
-
-    <div class="step">
-        <h2>Kerro lyhyesti omin sanoin tavoitteistasi</h2>
-        <input type="text" placeholder="Tavoitteeni on...">
-        <button>Lähetä</button>
-    </div>
-
-</div>
-
-    <nav id="nav">
-        <a href="index.html">Etusivu</a>
-        <a href="about.html">Minusta</a>
-        <a href="services.html">Palvelut</a>
-        <a href="pricing.html">Hinnasto</a>
-        <a href="contact.html">Yhteys</a>
-    </nav>
 </header>
 
 <!-- HERO -->
-<div class="hero-inner">
-    <h1>Pääse tavoitteisiisi minun avulla!</h1>
-
-    <p>
-        Selkeä suunnitelma. Ei arvailua. Oikeat tulokset.
-    </p>
-
-    <a href="contact.html" class="btn primary">
-        Aloita ilmainen konsultaatio
-    </a>
-</div>
+<section class="hero fade-up">
+    <div class="hero-inner">
+        <h1>Rakenna keho, josta olet ylpeä</h1>
+        <p>Selkeä suunnitelma. Oikeat tulokset.</p>
+        <a href="#quiz" class="btn">Aloita kartoitus</a>
     </div>
 </section>
+
+<!-- SERVICES -->
+<section class="fade-up">
+    <h2>Palvelut</h2>
+
+    <div class="grid">
+        <div class="card">Yksilövalmennus</div>
+        <div class="card">Ravinto-ohjaus</div>
+        <div class="card">Online coaching</div>
+    </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="quiz-section fade-up">
+
+<div class="quiz-container">
+
+<div class="progress-bar">
+    <div class="progress"></div>
+</div>
+
+<form action="https://formspree.io/f/xjgjdzvq" method="POST">
+
+<div class="step active">
+    <h2>Mikä on tavoitteesi?</h2>
+    <button type="button" onclick="nextStep()">Painonpudotus/Elämäntapamuutos</button>
+    <button type="button" onclick="nextStep()">Lihaskasvu</button>
+    <button type="button" onclick="nextStep()">Muu</button>
+</div>
+
+<div class="step">
+    <h2>Sukupuoli?</h2>
+    <button type="button" onclick="nextStep()">Mies</button>
+    <button type="button" onclick="nextStep()">Nainen</button>
+    <button type="button" onclick="nextStep()">Muu</button>
+</div>
+
+<div class="step">
+    <h2>Kerro lyhyesti omin sanoin tavoitteestasi</h2>
+    <input type="text" name="tell" placeholder="Tavoitteeni on..." required>
+    <button type="submit">Lähetä</button>
+</div>
+
+</form>
+
+</div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
