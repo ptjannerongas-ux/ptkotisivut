@@ -39,6 +39,31 @@ header.scrolled {
     background: rgba(0,0,0,0.95);
     padding: 15px 40px;
 }
+h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #aaa;
+}
+
+section {
+    padding: 140px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+section + section {
+    margin-top: 60px;
+}
+
 
 nav a {
     margin-left: 25px;
@@ -60,7 +85,7 @@ nav a:hover {
 }
 
 .hero-inner {
-    max-width: 700px;
+    max-width: 600px;
 }
 
 .hero h1 {
@@ -71,8 +96,7 @@ nav a:hover {
 
 .hero p {
     margin-top: 20px;
-    color: #aaa;
-    font-size: 18px;
+    margin-bottom: 30px;
 }
 
 .hero-buttons {
@@ -103,8 +127,12 @@ h2 {
 }
 
 .primary {
-    background: linear-gradient(135deg, #777, #aaa);
-    color: white;
+    background: linear-gradient(135deg, #777, #bbb);
+    box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+}
+
+.primary:hover {
+    transform: translateY(-3px);
 }
 
 .secondary {
@@ -112,10 +140,7 @@ h2 {
     color: white;
 }
 
-/* HOVER EFFECT */
-.primary:hover {
-    transform: translateY(-3px);
-}
+/* HOVER EFFECT FOR SECONDARY BUTTON */
 
 .secondary:hover {
     background: #222;
@@ -244,6 +269,20 @@ input, textarea {
     max-width: 500px;
     margin: auto;
     text-align: center;
+}
+
+.quiz button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    background: #222;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.quiz button:hover {
+    background: #333;
 }
 
 .step {
