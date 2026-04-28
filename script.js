@@ -23,3 +23,12 @@ const appear = new IntersectionObserver(entries => {
 });
 
 faders.forEach(el => appear.observe(el));
+
+let current = 0;
+const steps = document.querySelectorAll(".step");
+
+function nextStep() {
+    steps[current].classList.remove("active");
+    current++;
+    steps[current].classList.add("active");
+}

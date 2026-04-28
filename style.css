@@ -240,3 +240,26 @@ input, textarea {
 .contact-card p {
     color: #aaa;
 }
+.quiz {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    background: #222;
+    color: white;
+    border: none;
+}
