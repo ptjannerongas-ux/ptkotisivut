@@ -1,77 +1,304 @@
 <!DOCTYPE html>
 <html lang="fi">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PT Janne | Personal Trainer</title>
+    <title>Janne Rongas | Personal Trainer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <div class="logo">PT JANNE</div>
+    <!-- HEADER -->
+<header class="navbar">
+
+    <div class="logo">
+        PERSONAL TRAINER JANNE RONGAS
+    </div>
+
+<!-- MENU BUTTON -->
+<div class="menu-btn" onclick="toggleMenu()">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+</div>
+
+<!-- OVERLAY MENU -->
+<nav class="overlay-menu">
+
+    <a href="index.html">Etusivu</a>
+    <a href="hinnasto.html">Hinnasto</a>
+    <a href="ohjelmat.html">Treeniohjelmat</a>
+    <a href="ruokavaliot.html">Ruokavaliot</a>
+    <a href="yhteystiedot.html">Yhteystiedot</a>
+
+</nav>
+
+
 </header>
 
-<!-- HERO -->
-<section class="hero fade-up">
-    <div class="hero-inner">
-        <h1>Rakenna keho, josta olet ylpeä</h1>
-        <p>Selkeä suunnitelma. Oikeat tulokset.</p>
-        <a href="#quiz" class="btn">Aloita kartoitus</a>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content glass fade-up">
+
+     <!-- CONTENT -->
+    <div class="hero-content glass fade-up">
+
+            <p class="hero-subtitle">
+                
+            </p>
+
+            <h1>
+            Tervetuloa!<br>
+            <br>
+            <br>Olitpa sitten aloittelija tai kokenut treenaaja, tarjoan sinulle yksilöllistä valmennusta, joka on räätälöity juuri sinun tarpeidesi ja tavoitteidesi mukaan.<br>
+            Lähdetään yhdessä sinun tavoitteitasi ja parempaa hyvinvointia kohti.<br>
+            </h1>
+
+            <p class="hero-text">
+                <br>Klikkaa alla olevaa painiketta ja vastaa kyselyyn, jos haluat varata ajan ilmaiseen konsultaatioon. Konsultaatio ei sido sinua mihinkään, mutta se on loistava tilaisuus keskustella tavoitteistasi ja siitä, miten voin auttaa sinua saavuttamaan ne.
+            </p>
+
+            <button class="btn" onclick="startQuiz()">
+                Alkukysely konsultaatiota varten
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services fade-up" id="services">
+
+        <div class="section-header">
+            <p class="section-tag">PALVELUT</p>
+            <h2>Tarjoan kokonaisvaltaista henkilökohtaista valmennusta sekä yksittäisiä ruokavalioita ja treeniohjelmia.</h2>
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Henkilökohtainen valmennus</h3>
+                <p>
+                    Kartoitan alussa lähtötilanteesi ja tavoitteesi, jonka mukaan suunnittelen ja toteutan juuri sinulle sopivan valmennuksen. Käymme läpi vaihe vaiheelta tavoitteeseesi johtavan polun, ja tuen sinua matkalla kohti tavoitteitasi. 
+                    Valmennus sisältää säännölliset yhteydenotot, seurantamittaukset ja tarvittaessa ohjelman päivitykset. Tämä valmennus onnistuu niin etänä kuin kasvotustenkin, sinun tarpeidesi mukaan.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Yksittäiset treeniohjelmat</h3>
+                <p>
+                    Oli tavoitteesi sitten lihaskasvu, rasvanpoltto tai vaikkapa tietyn lihasryhmän kehittäminen, voit ostaa valmiin treeniohjelman, joka on suunniteltu juuri sinun tavoitteidesi mukaan. Treeniohjelmat sisältävät kuvat liikkeistä, sarja- ja toistomäärät sekä harjoitusohjeet.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Ruokavaliot</h3>
+                <p>
+                    Tarjoan myös yksittäisiä ruokavalioita, jotka on suunniteltu tukemaan tavoitteitasi. Ruokavalio sisältää erilaisia vaihtoehtoja eri aterioille ja ateriat ovat suunniteltu helposti toteuttavaksi arjessasi. 
+                </p>
+            </div>
+
+        </div>
+
+</section>
+
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="quiz-section">
+
+        <div class="quiz-wrapper">
+
+            <!-- CLOSE -->
+            <button class="close-btn" type="button" onclick="closeQuiz()">
+                ✕
+            </button>
+
+            <!-- THANK YOU -->
+            <div class="thank-you">
+
+                <h2>Kiitos vastauksistasi 🙌</h2>
+
+                <p>
+                    Otan sinuun yhteyttä henkilökohtaisesti mahdollisimman pian.
+                </p>
+
+            </div>
+
+            <!-- QUIZ -->
+            <div class="quiz-container">
+
+                <!-- PROGRESS -->
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+
+                <!-- FORM -->
+                <form action="https://formspree.io/f/xjgjdzvq" method="POST">
+
+                    <!-- STEP 1 -->
+                    <div class="step active">
+
+                        <h2>Mikä on tavoitteesi?</h2>
+
+                        <input type="hidden" name="goal" id="goal">
+
+                        <button type="button"
+                            onclick="selectAnswer('goal','Painonpudotus / elämäntapamuutos')">
+                            Painonpudotus / elämäntapamuutos
+                        </button>
+
+                        <button type="button"
+                            onclick="selectAnswer('goal','Lihaskasvu')">
+                            Lihaskasvu
+                        </button>
+
+                        <button type="button"
+                            onclick="selectAnswer('goal','Muu')">
+                            Muu
+                        </button>
+
+                    </div>
+
+                    <!-- STEP 2 -->
+                    <div class="step">
+
+                        <h2>Sukupuoli</h2>
+
+                        <input type="hidden" name="gender" id="gender">
+
+                        <button type="button"
+                            onclick="selectAnswer('gender','Mies')">
+                            Mies
+                        </button>
+
+                        <button type="button"
+                            onclick="selectAnswer('gender','Nainen')">
+                            Nainen
+                        </button>
+
+                        <button type="button"
+                            onclick="selectAnswer('gender','Muu / en halua sanoa')">
+                            Muu / en halua sanoa
+                        </button>
+
+                    </div>
+
+                    <!-- STEP 3 -->
+                    <div class="step">
+
+                        <h2>Kerro tavoitteestasi</h2>
+
+                        <input type="text"
+                            name="goal_text"
+                            placeholder="Esim. Haluan pudottaa 10kg ja voida paremmin"
+                            required>
+
+                        <button type="button" onclick="nextStep()">
+                            Jatka
+                        </button>
+
+                    </div>
+
+                    <!-- STEP 4 -->
+                    <div class="step">
+
+                        <h2>Jätä yhteystietosi</h2>
+
+                        <input type="text"
+                            name="name"
+                            placeholder="Nimi"
+                            required>
+
+                        <input type="email"
+                            name="email"
+                            placeholder="Sähköposti"
+                            required>
+
+                        <input type="tel"
+                            name="phone"
+                            placeholder="Puhelinnumero">
+
+                        <button type="submit">
+                            Lähetä
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BIO -->
+    <section class="bio fade-up" id="bio">
+
+        <div class="section-header">
+            <p class="section-tag">MINUSTA</p>
+            <h2>Tietoa minusta</h2>
+            <p class="section-description">
+                Olen Janne Rongas, liikuntaneuvoja ja sertifoitu personal trainer. Uskon kokonaisvaltaiseen lähestymistapaan, jossa yhdistyvät tehokas harjoittelu, ravitsemus ja elämäntapamuutokset. Taustani urheilusta löytyy palloilulajeista kuten jääkiekko ja jalkapallo, moottoriurheilusta sekä kuntosaliharjoittelusta. Olen itse käynyt läpi erilaisia elämäntapamuutoksia ja tiedän, että matka kohti tavoitteita ei aina ole helppo, mutta se on ehdottomasti vaivan arvoinen. Olen täällä auttamassa sinua joka askeleella, olipa tavoitteesi sitten painonpudotus, lihaskasvu tai yleisen hyvinvoinnin parantaminen. Olen sairastanut diabeetesta, joten minulla on myös henkilökohtaista kokemusta siitä, miten oikeanlaisella valmennuksella ja elämäntapamuutoksilla voi vaikuttaa terveyteen ja hyvinvointiin. Olen sitoutunut tarjoamaan sinulle parasta mahdollista tukea ja ohjausta matkallasi kohti tavoitteitasi.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- FOOTER / CONTACT -->
+<footer class="footer fade-up">
+
+    <div class="footer-content">
+
+        <h2>Ota yhteyttä</h2>
+
+        <p class="footer-text">
+            Vastaan mielelläni kysymyksiin ja autan sinua
+            löytämään juuri sinulle sopivan valmennuksen.
+        </p>
+
+        <div class="footer-links">
+
+            <!-- EMAIL -->
+            <a href="mailto:pt.jannerongas@gmail.com">
+                📩 Sähköposti
+            </a>
+
+            <!-- INSTAGRAM -->
+            <a href="https://instagram.com/jjanneron"
+                target="_blank">
+
+                📸 Instagram
+            </a>
+
+            <!-- TIKTOK -->
+            <a href="https://tiktok.com/@sinuntiktok"
+                target="_blank">
+
+                🎵 TikTok
+            </a>
+
+        </div>
+
     </div>
-</section>
 
-<!-- SERVICES -->
-<section class="fade-up">
-    <h2>Palvelut</h2>
+</footer>
 
-    <div class="grid">
-        <div class="card">Yksilövalmennus</div>
-        <div class="card">Ravinto-ohjaus</div>
-        <div class="card">Online coaching</div>
-    </div>
-</section>
+    <script src="script.js"></script>
 
-<!-- QUIZ -->
-<section id="quiz" class="quiz-section fade-up">
-
-<div class="quiz-container">
-
-<div class="progress-bar">
-    <div class="progress"></div>
-</div>
-
-<form action="https://formspree.io/f/xjgjdzvq" method="POST">
-
-<div class="step active">
-    <h2>Mikä on tavoitteesi?</h2>
-    <button type="button" onclick="nextStep()">Painonpudotus/Elämäntapamuutos</button>
-    <button type="button" onclick="nextStep()">Lihaskasvu</button>
-    <button type="button" onclick="nextStep()">Muu</button>
-</div>
-
-<div class="step">
-    <h2>Sukupuoli?</h2>
-    <button type="button" onclick="nextStep()">Mies</button>
-    <button type="button" onclick="nextStep()">Nainen</button>
-    <button type="button" onclick="nextStep()">Muu</button>
-</div>
-
-<div class="step">
-    <h2>Kerro lyhyesti omin sanoin tavoitteestasi</h2>
-    <input type="text" name="tell" placeholder="Tavoitteeni on..." required>
-    <button type="submit">Lähetä</button>
-</div>
-
-</form>
-
-</div>
-</section>
-
-<script src="script.js"></script>
 </body>
+
 </html>
