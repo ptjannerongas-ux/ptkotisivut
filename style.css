@@ -855,10 +855,15 @@ input {
     }
 
     .about-container {
-
+        display: grid;
         grid-template-columns: 1fr;
-
         gap: 40px;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: auto;
+        max-height: none;
     }
 
     .about-text {
@@ -972,3 +977,44 @@ input {
         text-align: center;
         box-sizing: border-box;
     }
+
+    /* ABOUT DESKTOP FIX */
+@media (min-width: 769px) {
+    .about-container {
+        display: grid;
+        grid-template-columns: 420px 1fr;
+        gap: 70px;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .about-image {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 560px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 28px;
+    }
+
+    .about-text {
+        max-width: 650px;
+    }
+
+    .about-text h2 {
+        font-size: 48px;
+        line-height: 1.05;
+        margin-bottom: 26px;
+    }
+
+    .about-text p {
+        font-size: 17px;
+        line-height: 1.85;
+        margin-bottom: 20px;
+    }
+}
