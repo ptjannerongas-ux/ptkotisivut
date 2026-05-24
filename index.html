@@ -67,7 +67,7 @@
                 Lähdetään yhdessä sinun tavoitteitasi ja parempaa hyvinvointia kohti.
 
             <p class="hero-text">
-                
+
                 <br>Klikkaa alla olevaa painiketta ja vastaa kyselyyn, jos haluat varata ajan ilmaiseen konsultaatioon. Konsultaatio ei sido sinua mihinkään, mutta se on loistava tilaisuus keskustella tavoitteistasi ja siitä, miten voin auttaa sinua saavuttamaan ne.
             </p>
 
@@ -298,7 +298,15 @@
 
 </footer>
 
-    <script src="script.js"></script>
+<script>
+function toggleMenu() {
+    // Etsitään overlay-menu
+    const menu = document.querySelector('.overlay-menu');
+    
+    // Toggletetaan open-luokka. Jos se puuttuu, se lisätään. Jos se on, se poistetaan.
+    menu.classList.toggle('open');
+}
+</script>
 
 </body>
 
