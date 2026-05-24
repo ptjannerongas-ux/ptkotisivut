@@ -715,13 +715,17 @@ input {
         cursor: pointer;
         z-index: 1005;          
         flex-shrink: 0;         
-        
-        /* PAKOTETUT SÄÄDÖT KESKITYKSEEN: */
-        margin-top: 0 !important;    /* Kumoaa mahdolliset vanhat ylämarginaalit */
-        margin-bottom: 0 !important; /* Kumoaa mahdolliset vanhat alamarginaalit */
-        transform: none;             /* Varmistaa, ettei mikään vanha muunnos siirrä painiketta */
-        display: inline-block;       /* Varmistaa oikean kokolaskennan */
-        vertical-align: middle;      /* Linjaa tekstilogon kanssa */
+        position: relative; /* Antaa viivoille turvallisen kiintopisteen */
+    
+        /* Pakotetaan takaisin alkuperäiset mitat, ettei painike kutistu */
+        width: 30px !important;       /* Säädä tätä, jos viivasi olivat alunperin leveämpiä */
+        height: 24px !important;      /* Säädä tätä, jos painikkeen korkeus oli eri */
+    
+        /* Nollataan mahdolliset alas vetävät marginaalit */
+        margin: 0 !important;    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .menu-btn span {
