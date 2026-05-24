@@ -50,7 +50,6 @@
     <!-- HERO -->
     <section class="hero" id="hero">
     <div class="hero-overlay"></div>
-    <div class="hero-content glass fade-up">
 
      <!-- CONTENT -->
     <div class="hero-content glass fade-up">
@@ -65,6 +64,7 @@
                 tarjoan sinulle yksilöllistä valmennusta, joka
                 on räätälöity juuri sinun tarpeidesi ja tavoitteidesi mukaan.
                 Lähdetään yhdessä sinun tavoitteitasi ja parempaa hyvinvointia kohti.
+            </p>
 
             <p class="hero-text">
 
@@ -114,8 +114,6 @@
         </div>
 
 </section>
-
-    </section>
 
     <!-- QUIZ -->
     <section id="quiz" class="quiz-section">
@@ -300,12 +298,33 @@
 
 <script>
 function toggleMenu() {
-    // Etsitään overlay-menu
+    // Etsitään valikko
     const menu = document.querySelector('.overlay-menu');
     
-    // Toggletetaan open-luokka. Jos se puuttuu, se lisätään. Jos se on, se poistetaan.
+    // classList.toggle hoitaa luokan lisäämisen ja poistamisen automaattisesti
     menu.classList.toggle('open');
 }
+document.addEventListener("DOMContentLoaded", () => {
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+
+        });
+
+    }, {
+        threshold: 0.15
+    });
+
+    document.querySelectorAll(".fade-up, .card").forEach((el) => {
+        observer.observe(el);
+    });
+
+});
 </script>
 
 </body>

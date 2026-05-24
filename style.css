@@ -30,13 +30,13 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between; /* Logo vasemmalle, hamburger oikealle */
-    align-items: center;            /* Täydellinen pystysuora keskitys */
+    align-items: center;            /* Keskittää logon ja hamburgerin täydellisesti linjaan */
     padding: 24px 40px; 
     box-sizing: border-box;
-    z-index: 1000;
-    background: rgba(10,10,10,0.55);
+    z-index: 9999;                  /* Palkki pysyy aina kaiken muun päällä */
+    background: rgba(10, 10, 10, 0.55);
     backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* MENU BUTTON */
@@ -47,7 +47,8 @@ header {
     width: 30px;
     height: 21px;
     cursor: pointer;
-    z-index: 1005; /* Hamburger on aina kaiken päällimmäisenä */
+    z-index: 10002; /* Hamburger on aina päällimmäisenä, jotta sitä voi klikata */
+    margin: 0;      /* Poistaa linjausta sotkevat marginaalit */
 }
 
 .menu-btn span {
@@ -76,30 +77,26 @@ header {
 }
 
 /* OVERLAY MENU */
-/* TÄMÄ ON VALIKKO SULJETTUNA: Haamu, jonka läpi voi klikata */
+/* TÄMÄ ON VALIKKO SULJETTUNA: Pakotetaan täysin piiloon.
+   Nyt se ei voi peittää etusivua tai estää klikkauksia! */
 .overlay-menu {
+    display: none; /* Kokonaan piilossa oletuksena */
+}
+
+/* Kun valikko avataan */
+.overlay-menu.open {
+    display: flex !important;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.98); 
-    z-index: 1000;
-    
-    /* Muutetaan oletuksena piilotetuksi */
-    display: none; 
-    
-    /* Flexbox-keskitys linkeille */
+    background: rgba(10, 10, 10, 0.98);
+    z-index: 9999;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 24px;
-}
-
-/* TÄMÄ ON VALIKKO AUKI: Kun .open-luokka lisätään, valikko herää henkiin */
-.overlay-menu.open {
-    display: flex !important; /* Pakottaa valikon näkyviin ja asettaa linkit keskelle */
-    
 }
 
 /* OPEN */
@@ -118,7 +115,7 @@ header {
     font-weight: 600;
     letter-spacing: -1px;
     
-    opacity: 0;
+    opacity: 1;
 
     transform: translateY(30px);
 
@@ -128,29 +125,29 @@ header {
 }
 
 /* ACTIVE */
-.overlay-menu.active a {
+.overlay-menu.open a {
     opacity: 1;
     transform: translateY(0);
 }
 
 /* STAGGER */
-.overlay-menu.active a:nth-child(1) {
+.overlay-menu.open a:nth-child(1) {
     transition-delay: 0.1s;
 }
 
-.overlay-menu.active a:nth-child(2) {
+.overlay-menu.open a:nth-child(2) {
     transition-delay: 0.2s;
 }
 
-.overlay-menu.active a:nth-child(3) {
+.overlay-menu.open a:nth-child(3) {
     transition-delay: 0.3s;
 }
 
-.overlay-menu.active a:nth-child(4) {
+.overlay-menu.open a:nth-child(4) {
     transition-delay: 0.4s;
 }
 
-.overlay-menu.active a:nth-child(5) {
+.overlay-menu.open a:nth-child(5) {
     transition-delay: 0.5s;
 }
 
@@ -158,7 +155,8 @@ header {
 .logo {
     font-weight: 700;
     letter-spacing: 1px;
-    z-index: 1001; /* Pitää logon aina valikon yläpuolella clickattavana */
+    color: white;
+    z-index: 10001; /* Logo pysyy klikattavana myös valikon ollessa auki */
 }
 
 /* NAV LINKS */
@@ -213,21 +211,18 @@ header {
 
 /* HERO */
 .hero {
-
     position: relative;
     min-height: 100vh;
-    display: flex;
+    display: flex !important; /* MUUTETTU: Flexbox takaisin, jotta align-items ja justify-content toimivat */
     align-items: center;
     justify-content: center;
     padding: 120px 40px;
     overflow: hidden;
-    background:
-        linear-gradient(
-            rgba(0,0,0,0.75),
-            rgba(0,0,0,0.85)
-        ),
-
-        url("hero.jpg");
+    
+    /* VALAISTU TAUSTA: Kevennetään mustaa reilusti (vain 20%-40%), jotta sisältö ja puuttuva kuva erottuvat */
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url('hero.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 
@@ -669,30 +664,19 @@ input {
 
     /* HEADER / NAVBAR */
     .navbar {
-        padding: 20px 20px !important; /* Tiiviimpi sisennys puhelimille */
+        padding: 20px 20px;
     }
 
     /* LOGO */
     .logo {
-        font-size: clamp(14px, 4vw, 18px); /* Kutistetaan tekstiä puhelimella */
+        font-size: clamp(14px, 4.5vw, 18px); /* Kutistaa tekstiä puhelimen koon mukaan */
         max-width: 75%;
         overflow-wrap: break-word;
     }
 
     /* MENU BUTTON */
     .menu-btn {
-        cursor: pointer;
-        z-index: 1005;          
-        flex-shrink: 0;         
-    
-        /* Mitat */
-        width: 30px !important;       
-        height: 22px !important;      
-    
-        /* Nollataan kaikki aiemmat siirrot ja marginaalit, jotta aloitetaan puhtaalta pöydältä */
-        margin: 0 !important;
-        margin-left: auto !important; /* Pitää painikkeen oikeassa laidassa */
-        transform: none !important;
+        margin-left: auto;
     }
 
     .menu-btn span {
