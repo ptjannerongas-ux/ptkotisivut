@@ -1133,3 +1133,32 @@ input {
         margin-bottom: 22px;
     }
 }
+
+/* QUIZ MOBILE FIX */
+.quiz-section {
+    z-index: 20000;
+}
+
+.quiz-wrapper {
+    position: relative;
+    z-index: 20001;
+}
+
+.quiz-container {
+    position: relative;
+    z-index: 20002;
+}
+
+.quiz-container button,
+.quiz-container input {
+    position: relative;
+    z-index: 20003;
+    pointer-events: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 20004;
+}
