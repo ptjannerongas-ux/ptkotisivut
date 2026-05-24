@@ -83,28 +83,24 @@ header {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(10, 10, 10, 0.98); 
     z-index: 1000;
-    display: flex;
+    
+    /* Muutetaan oletuksena piilotetuksi */
+    display: none; 
+    
+    /* Flexbox-keskitys linkeille */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 24px;
-
-    /* Piilotetaan valikko aluksi */
-    opacity: 0;
-    pointer-events: none; 
-    transition: opacity 0.3s ease; /* Tekee avautumisesta pehmeän */
 }
 
 /* TÄMÄ ON VALIKKO AUKI: Kun .open-luokka lisätään, valikko herää henkiin */
 .overlay-menu.open {
-    opacity: 1;
-    pointer-events: auto; /* Linkit aktivoituvat klikattaviksi */
+    display: flex !important; /* Pakottaa valikon näkyviin ja asettaa linkit keskelle */
     
 }
-
-
 
 /* OPEN */
 .overlay-menu.active {
@@ -682,7 +678,7 @@ input {
         max-width: 75%;
         overflow-wrap: break-word;
     }
-    
+
     /* MENU BUTTON */
     .menu-btn {
         cursor: pointer;
