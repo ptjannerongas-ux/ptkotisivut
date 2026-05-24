@@ -739,7 +739,7 @@ input {
         background-color: white;        /* Muuta väriä jos taustasi on vaalea */
         transition: 0.3s ease;
         position: relative !important; /* Varmistaa, että siirto toimii */
-        top: -8px !important;         /* Vetää kaikki kolme viivaa 8 pikseliä ylöspäin */
+        top: -12px !important;         /* Vetää kaikki kolme viivaa 8 pikseliä ylöspäin */
     }
 
     .overlay-menu {
