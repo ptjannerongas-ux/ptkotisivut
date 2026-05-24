@@ -615,16 +615,19 @@ input {
 
 /* CONTENT */
 .footer-content {
+    width: 100%;
     max-width: 900px;
     margin: auto;
-
     text-align: center;
+    box-sizing: border-box;
 }
 
 /* TITLE */
 .footer h2 {
-    font-size: 48px;
+    font-size: clamp(32px, 6vw, 48px);
     margin-bottom: 20px;
+    width: 100%;
+    overflow-wrap: break-word;
 }
 
 /* TEXT */
@@ -644,9 +647,9 @@ input {
 .footer-links {
     display: flex;
     justify-content: center;
-    gap: 30px;
-
+    gap: 16px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 /* LINK STYLE */
