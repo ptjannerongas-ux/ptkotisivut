@@ -225,7 +225,109 @@ header {
     background-position: center;
 }
 
+/* ABOUT */
+.about-section {
 
+    padding:
+        140px 8%;
+
+    position: relative;
+}
+
+/* CONTAINER */
+.about-container {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+
+    max-width: 1400px;
+
+    margin: auto;
+}
+
+/* IMAGE */
+.about-image {
+
+    position: relative;
+}
+
+.about-image img {
+
+    width: 100%;
+
+    border-radius: 28px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.45);
+
+    transition:
+        transform 0.6s ease,
+        box-shadow 0.6s ease;
+}
+
+/* HOVER */
+.about-image img:hover {
+
+    transform: scale(1.02);
+
+    box-shadow:
+        0 40px 100px rgba(0,0,0,0.65);
+}
+
+/* TEXT */
+.about-text {
+
+    max-width: 620px;
+}
+
+/* TAG */
+.section-tag {
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    color: #8d8d8d;
+
+    margin-bottom: 22px;
+}
+
+/* TITLE */
+.about-text h2 {
+
+    font-size: clamp(42px, 5vw, 64px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 32px;
+}
+
+/* PARAGRAPHS */
+.about-text p {
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color: #b5b5b5;
+
+    margin-bottom: 24px;
+}
 
 /* GLASS PANEL */
 .glass {
@@ -752,6 +854,32 @@ input {
         letter-spacing: 3px;
     }
 
+    .about-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .about-text {
+
+        max-width: 100%;
+    }
+
+    .about-text h2 {
+
+        font-size: 42px;
+    }
+
+    .about-text p {
+
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+}
+
     /* BUTTON */
     .btn {
         width: 100%;
@@ -844,5 +972,3 @@ input {
         text-align: center;
         box-sizing: border-box;
     }
-
-}
