@@ -698,7 +698,6 @@ input {
         padding: 20px;             
         width: 100%;
         box-sizing: border-box;
-        position: relative;
     }
 
     /* LOGO */
@@ -711,12 +710,18 @@ input {
         overflow-wrap: break-word;
         margin: 0; /* Nollataan mahdolliset vanhat marginaalit, jotka siirtävät logoa */
     }
-
+    /* MENU BUTTON */
     .menu-btn {
         cursor: pointer;
-        z-index: 1005;          /* NOSTETTU: Varmistaa, että painike on AINA overlay-valikon päällä */
+        z-index: 1005;          
         flex-shrink: 0;         
-        margin: 0;              /* Nollataan marginaalit, jotta tasaus toimii */
+        
+        /* PAKOTETUT SÄÄDÖT KESKITYKSEEN: */
+        margin-top: 0 !important;    /* Kumoaa mahdolliset vanhat ylämarginaalit */
+        margin-bottom: 0 !important; /* Kumoaa mahdolliset vanhat alamarginaalit */
+        transform: none;             /* Varmistaa, ettei mikään vanha muunnos siirrä painiketta */
+        display: inline-block;       /* Varmistaa oikean kokolaskennan */
+        vertical-align: middle;      /* Linjaa tekstilogon kanssa */
     }
 
     .menu-btn span {
