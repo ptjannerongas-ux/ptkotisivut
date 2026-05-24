@@ -690,6 +690,46 @@ input {
 
 @media (max-width: 768px) {
 
+        /* HEADER / NAVBAR */
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* Logo vasemmalle, valikkopainike oikealle */
+        align-items: center;            /* Keskittää molemmat täydellisesti pystysuunnassa */
+        padding: 16px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;             /* Varmistaa, että overlay-menu asettuu oikein */
+    }
+
+    /* LOGO */
+    .logo {
+        font-size: clamp(14px, 4vw, 18px); /* Kutistaa tekstiä puhelimella, ettei se puske valikon päälle */
+        font-weight: 700;
+        letter-spacing: 1px;
+        line-height: 1.2;
+        max-width: 75%;                 /* Jättää 25% tilaa hamburger-painikkeelle */
+        overflow-wrap: break-word;
+    }
+
+    .menu-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;                    /* Hamburger-viivojen leveys */
+        height: 21px;                   /* Hamburger-viivojen kokonaiskorkeus */
+        cursor: pointer;
+        z-index: 1001;                  /* Pitää painikkeen aina päällimmäisenä */
+        flex-shrink: 0;                 /* Estää painiketta lytistymästä tekstin takia */
+    }
+
+        .menu-btn span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: white;        /* Muuta väriä jos taustasi on vaalea */
+        transition: 0.3s ease;
+    }
+
     /* HERO */
     .hero {
         padding: 100px 16px 60px;
