@@ -1136,7 +1136,14 @@ input {
 
 /* QUIZ MOBILE FIX */
 .quiz-section {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
     z-index: 20000;
+    align-items: center;
+    justify-content: center;
 }
 
 .quiz-wrapper {
