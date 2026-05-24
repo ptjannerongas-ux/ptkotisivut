@@ -1169,3 +1169,8 @@ input {
     right: 24px;
     z-index: 20004;
 }
+
+.fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+}
