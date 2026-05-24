@@ -690,44 +690,46 @@ input {
 
 @media (max-width: 768px) {
 
-        /* HEADER / NAVBAR */
+    /* HEADER / NAVBAR */
     .navbar {
         display: flex;
-        justify-content: space-between; /* Logo vasemmalle, valikkopainike oikealle */
-        align-items: center;            /* Keskittää molemmat täydellisesti pystysuunnassa */
-        padding: 16px 20px;
+        justify-content: space-between; 
+        align-items: center;            /* Keskittää logon ja painikkeen pystysuunnassa */
+        padding: 20px;             
         width: 100%;
         box-sizing: border-box;
-        position: relative;             /* Varmistaa, että overlay-menu asettuu oikein */
+        position: relative;
     }
 
     /* LOGO */
     .logo {
-        font-size: clamp(14px, 4vw, 18px); /* Kutistaa tekstiä puhelimella, ettei se puske valikon päälle */
+        font-size: clamp(14px, 4vw, 18px); 
         font-weight: 700;
         letter-spacing: 1px;
         line-height: 1.2;
-        max-width: 75%;                 /* Jättää 25% tilaa hamburger-painikkeelle */
+        max-width: 75%;                 
         overflow-wrap: break-word;
+        margin: 0; /* Nollataan mahdolliset vanhat marginaalit, jotka siirtävät logoa */
     }
 
     .menu-btn {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;                    /* Hamburger-viivojen leveys */
-        height: 21px;                   /* Hamburger-viivojen kokonaiskorkeus */
         cursor: pointer;
-        z-index: 1001;                  /* Pitää painikkeen aina päällimmäisenä */
-        flex-shrink: 0;                 /* Estää painiketta lytistymästä tekstin takia */
+        z-index: 1005;          /* NOSTETTU: Varmistaa, että painike on AINA overlay-valikon päällä */
+        flex-shrink: 0;         
+        margin: 0;              /* Nollataan marginaalit, jotta tasaus toimii */
     }
 
-        .menu-btn span {
+    .menu-btn span {
         display: block;
         height: 3px;
         width: 100%;
         background-color: white;        /* Muuta väriä jos taustasi on vaalea */
         transition: 0.3s ease;
+    }
+
+    .overlay-menu {
+        z-index: 1000;          /* Valikko on painikkeen (1005) alapuolella */
+        /* Pidä muut oman valikkosi tyylit (kuten position: fixed tai width: 100%) ennallaan */
     }
 
     /* HERO */
