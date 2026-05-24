@@ -273,9 +273,9 @@ header {
 
 /* HERO TEXT */
 .hero h1 {
-    font-size: clamp(32px, 7vw, 46px);
+    font-size: clamp(36px, 8vw, 54px);
     line-height: 1.1;
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
     font-weight: 700;
     width: 100%;
     max-width: 700px;
@@ -283,14 +283,11 @@ header {
 }
 
 .hero-text {
-
-    font-size: 18px;
-
-    line-height: 1.8;
-
+    font-size: clamp(16px, 4vw, 20px);
+    line-height: 1.5;
     color: #b5b5b5;
-
-    max-width: 600px;
+    max-width: 700px;
+    width: 100%;
 }
 
 .hero-subtitle {
