@@ -348,37 +348,44 @@ function toggleMenu() {
     // classList.toggle hoitaa luokan lisäämisen ja poistamisen automaattisesti
     menu.classList.toggle('open');
 }
-document.addEventListener("DOMContentLoaded", () => {
+let current = 0;
 
-    const observer = new IntersectionObserver((entries) => {
+function openQuiz() {
+    document.querySelector(".quiz-section").style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
 
-        entries.forEach(entry => {
+function closeQuiz() {
+    document.querySelector(".quiz-section").style.display = "none";
+    document.body.style.overflow = "auto";
+}
 
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            }
+function nextStep() {
+    const steps = document.querySelectorAll(".step");
 
-        });
+    steps[current].classList.remove("active");
+    current++;
 
-    }, {
-        threshold: 0.15
-    });
+    if (current < steps.length) {
+        steps[current].classList.add("active");
+    }
+}
 
-    document.querySelectorAll(".fade-up, .card").forEach((el) => {
-        observer.observe(el);
-    });
+function selectAnswer(field, value) {
+    const input = document.getElementById(field);
 
-});
+    if (input) {
+        input.value = value;
+    }
+
+    nextStep();
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     const startBtn = document.getElementById("startQuizBtn");
-    const quiz = document.querySelector(".quiz-section");
 
-    if (startBtn && quiz) {
-        startBtn.addEventListener("click", function () {
-            quiz.style.display = "flex";
-            document.body.style.overflow = "hidden";
-        });
+    if (startBtn) {
+        startBtn.addEventListener("click", openQuiz);
     }
 });
 
