@@ -733,7 +733,7 @@ input {
         margin-bottom: 0 !important;
         margin-right: 0 !important;
         /* UUSI RIVI: Siirtää painiketta manuaalisesti ylöspäin */
-        transform: translateY(-6px) !important; 
+        transform: translateY(-8px) !important; 
     }
 
     .menu-btn span {
