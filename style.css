@@ -916,21 +916,64 @@ input {
     }
 
     .about-text {
-        padding: 34px 26px;
-        max-width: 100%;
-    }
 
-    .about-text h2 {
+    flex: 1;
 
-        font-size: 42px;
-    }
+    max-width: 650px;
 
-    .about-text p {
+    background:
+        rgba(255,255,255,0.04);
 
-        font-size: 16px;
+    border:
+        1px solid rgba(255,255,255,0.06);
 
-        line-height: 1.8;
-    }
+    backdrop-filter: blur(12px);
+
+    padding: 54px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.35);
+}
+
+/* TITLE */
+.about-text h2 {
+
+    font-size: clamp(42px, 5vw, 60px);
+
+    line-height: 1.02;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 34px;
+
+    max-width: 10ch;
+}
+
+/* PARAGRAPH WRAPPER */
+.about-paragraphs {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 26px;
+}
+
+/* PARAGRAPHS */
+.about-paragraphs p {
+
+    font-size: 17px;
+
+    line-height: 1.95;
+
+    color: #b8b8b8;
+
+    margin: 0;
+
+    max-width: 52ch;
+}
 
 }
 
