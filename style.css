@@ -273,17 +273,12 @@ header {
 
 /* HERO TEXT */
 .hero h1 {
-
-    font-size: clamp(46px, 7vw, 40px);
-
-    line-height: 1;
-
-    letter-spacing: -2px;
-
+    font-size: clamp(32px, 7vw, 46px);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
     font-weight: 700;
-
+    width: 100%;
     max-width: 700px;
-
     margin-bottom: 24px;
 }
 
