@@ -269,7 +269,7 @@ header {
 
 /* HERO TEXT */
 .hero h1 {
-    font-size: 40px;
+    font-size: clamp(42px, 8vw, 78px);
     line-height: 1.05;
     margin-bottom: 30px;
     letter-spacing: -2px;
@@ -644,6 +644,10 @@ input {
         min-height: auto;
     }
 
+    .hero-content {
+        max-width: 600px;
+    }
+
     .glass {
         padding: 35px 24px;
         border-radius: 22px;
@@ -651,13 +655,16 @@ input {
 
     .hero h1 {
         font-size: 42px;
-        line-height: 1.1;
-        letter-spacing: -1px;
+        line-height: 1.05;
+        letter-spacing: -1.5px;
+        max-width: 100%;
+        margin-bottom: 24px;
     }
 
     .hero-text {
         font-size: 16px;
         line-height: 1.7;
+        max-width: 100%;
     }
 
     /* BUTTON */
