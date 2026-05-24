@@ -691,10 +691,11 @@ input {
 @media (max-width: 768px) {
 
     /* HEADER / NAVBAR */
-    .navbar {
-        display: flex;
-        justify-content: space-between; 
-        align-items: center;            /* Keskittää logon ja painikkeen pystysuunnassa */
+   .navbar {
+        display: flex !important;       /* PAKOTTAA elementit rinnakkain */
+        flex-direction: row !important; /* Varmistaa, etteivät ne mene allekkain */
+        justify-content: space-between; /* Puskee logon vasemmalle ja valikon oikealle */
+        align-items: center;            /* Keskittää molemmat täydellisesti pystysuunnassa */
         padding: 20px;             
         width: 100%;
         box-sizing: border-box;
@@ -715,17 +716,22 @@ input {
         cursor: pointer;
         z-index: 1005;          
         flex-shrink: 0;         
-        position: relative; /* Antaa viivoille turvallisen kiintopisteen */
+        position: relative; 
     
-        /* Pakotetaan takaisin alkuperäiset mitat, ettei painike kutistu */
-        width: 30px !important;       /* Säädä tätä, jos viivasi olivat alunperin leveämpiä */
-        height: 24px !important;      /* Säädä tätä, jos painikkeen korkeus oli eri */
+        /* Alkuperäiset mitat, jotka pitävät hamburgerin kasassa */
+        width: 30px !important;       
+        height: 22px !important;      
     
-        /* Nollataan mahdolliset alas vetävät marginaalit */
-        margin: 0 !important;    
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        /* Flex-asetukset viivojen välille */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+    
+        /* PAKOTETTU SIIRTÄMINEN OIKEAAN LAITAAN JA KESKITYS */
+        margin-left: auto !important; /* Työntää painikkeen väkisin aivan oikeaan reunaan */
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        margin-right: 0 !important;
     }
 
     .menu-btn span {
