@@ -1187,3 +1187,68 @@ input {
     right: 24px;
     z-index: 20004;
 }
+
+/* =========================
+   MOBILE TEXT POLISH
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: clamp(32px, 9vw, 44px);
+        line-height: 1.08;
+        letter-spacing: -1px;
+        margin-bottom: 22px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+        line-height: 1.75;
+        margin-bottom: 18px;
+    }
+
+    .glass {
+        padding: 32px 22px;
+    }
+
+    .section-header h2 {
+        font-size: clamp(30px, 8vw, 40px);
+        line-height: 1.15;
+        letter-spacing: -0.5px;
+    }
+
+    .section-tag {
+        font-size: 13px;
+        letter-spacing: 2.5px;
+    }
+
+    .card h3,
+    .about-subtitle {
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .card p,
+    .about-paragraphs p,
+    .footer-text {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .about-text {
+        padding: 34px 24px;
+    }
+
+    .about-paragraphs {
+        gap: 24px;
+    }
+
+    .footer h2 {
+        font-size: clamp(30px, 8vw, 38px);
+        line-height: 1.15;
+    }
+}
