@@ -523,12 +523,15 @@ p {
 }
 
 .card {
+    text-decoration: none;
+
+    color: white;
+
     background: linear-gradient(
         180deg,
         rgba(255,255,255,0.05),
         rgba(255,255,255,0.02)
     );
-
     border: 1px solid rgba(255,255,255,0.06);
     padding: 40px;
     border-radius: 24px;
@@ -1703,4 +1706,12 @@ input {
 .service-card:hover {
     color: white;
     text-decoration: none;
+}
+
+.card *,
+.service-card *,
+.service-card h3,
+.service-card p {
+    color: white !important;
+    text-decoration: none !important;
 }
