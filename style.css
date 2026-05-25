@@ -277,10 +277,11 @@ header {
 .about-image img {
 
     width: 100%;
-
+    height: auto;
+    max-height: 620px;
     border-radius: 28px;
 
-    object-fit: cover;
+    object-fit: contain;
 
     display: block;
 
@@ -357,13 +358,26 @@ header {
 /* TITLE */
 .about-text h2 {
 
-    font-size: clamp(42px, 5vw, 64px);
+    font-size: clamp(34px, 4vw, 48px);
 
-    line-height: 1;
+    line-height: 1.1;
 
-    letter-spacing: -2px;
+    letter-spacing: -1px;
 
-    margin-bottom: 32px;
+    margin-bottom: 30px;
+}
+
+.about-subtitle {
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    margin-top: 20px;
+
+    margin-bottom: 12px;
+
+    color: white;
 }
 
 /* PARAGRAPHS */
@@ -626,19 +640,28 @@ input {
     background: #aaa;
 }
 
-/* ANIMATION */
+/* SCROLL ANIMATION */
 .fade-up {
+
     opacity: 0;
-    transform: translateY(70px) scale(0.98);
+
+    transform:
+        translateY(70px)
+        scale(0.98);
 
     transition:
-        opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ACTIVE */
 .fade-up.show {
+
     opacity: 1;
-    transform: translateY(0) scale(1);
+
+    transform:
+        translateY(0)
+        scale(1);
 }
 
 .hero::before {
@@ -1097,14 +1120,9 @@ input {
     .about-image img {
 
         width: 420px;
-
-        height: 560px;
-
-        object-fit: cover;
-
-        border-radius: 28px;
-
-        display: block;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
     }
 
     /* TEXT SIDE */
@@ -1168,9 +1186,4 @@ input {
     top: 24px;
     right: 24px;
     z-index: 20004;
-}
-
-.fade-up {
-    opacity: 1 !important;
-    transform: none !important;
 }

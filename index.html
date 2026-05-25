@@ -262,39 +262,69 @@
         </p>
 
     <h2>
-        Kuka olen?
 
     </h2>
 
     <div class="about-paragraphs">
-
+    <h3 class="about-subtitle">
+        Kuka olen?
+    </h3>
         <p>
-            Olen Janne Rongas — liikuntaneuvoja,
-            sertifioitu personal trainer sekä
-            intohimoinen itsensä kehittäjä.
+            Olen Janne Rongas ja opiskelen tällä hetkellä 
+            liikuntaneuvojaksi Lapin Urheiluopisto Santasportilla,
+            ja valmistun vuoden 2026 loppuun mennessä.
+        </p>
+        
+        <p> Olen koulun aikana opiskellut yksilöllistä liikunnan 
+            ohjaamista ja ryhmäliikunnan ohjausta aikuisille sekä lapsille.
+            Koulun aikana suoritan myös personal trainer -koulutuksen, ja 
+            syksyllä 2026 olen sertifoitu personal trainer.<br>Kyseiseen
+            sertifikaattiin kuuluu teoreettinen osuus, sekä asiakkaan
+            ohjausta käytännössä, joten koulutuksen aikana olen kartuttanut 
+            myös käytännön kokemusta asiakkaiden ohjaamisesta. 
+        </p>
+        <p>    
+            Paljon olen oppinut koulun kautta, mutta paljon myös olen ollut
+            erilaisissa seminaareissa, joissa on käsitelty nykyisiin 
+            tutkimustietoihin perustuvaa tietoa ravitsemuksesta sekä harjoittelusta.
+            Tulevaisuudessa aion osallistua lisäkoulutuksiin ja seminaareihin, 
+            jotta pysyn ajan tasalla alan kehityksestä, ja voin tarjota asiakkaille
+            parasta mahdollista valmennusta.
+        </p>
+    <h3 class="about-subtitle">
+        Urheilutaustani ja valmennusfilosofiani
+    </h3>
+        <p>
+            Oma urheilutaustani löytyy pääosin palloilulajeista sekä voimaharjoittelusta.
+            Aloitin treenaamaan kuntosalilla aktiviisesti jo 13-vuotiaana, 
+            joten minulla on pitkä kokemus varsinkin voimaharjoittelusta, ja erityisesti 
+            maksimaaliseen lihaskasvuun tähtäävästä treenaamisesta.
         </p>
 
         <p>
-            Urheilutaustani löytyy palloilulajeista
-            sekä kuntosaliharjoittelusta. Aloitin
-            treenaamaan kuntosalilla aktiviisesti
-            jo 13-vuotiaana, joten minulla on
-            pitkä kokemus kuntosalin maailmasta.
-            Olen kokeillut oikeastaan kaikki
-            mahdolliset trendit treenaamiseen
-            liittyen ja lukenut myös kirjallisuutta
-            aiheesta, joten tiedän varmasti mikä
-            toimii, ja mikä ei toimi.
+            Olen kokeillut erilaisia treenimetodeja sekä ruokavalioita vuosien varella,
+            ja seurannut aktiivisesti fitness- ja treenimaailman kehitystä. 
+            Olen lukenut myös kirjallisuutta aiheesta, joten tiedän varmasti mikä toimii
+            ja mikä ei toimi, yksilölliset erot huomioiden.
+        </p>
+        <p>
+            Minun valmennukseni perustuu tieteellisesti tutkittuun tietoon sekä
+            käytännön kokemuksen kautta oppimiini asioihin. En usko mihinkään yksittäiseen 
+            metodiin, vaan räätälöin valmennuksen aina asiakkaan tarpeiden ja tavoitteiden 
+            mukaan. 
+            Tiedostan sen, että me jokainen olemme yksilöitä, ja siksi valmennuksen tulee 
+            olla yksilöllistä ja joustavaa, jotta se sopii juuri sinulle ja sinun tarpeisiin.<br>
+            Siksi otan huomioon valmennuksessa myös psyykkisen hyvinvoinnin, joka on tärkeä osa 
+            onnistunutta kokonaisvaltaista valmennusta ja tavoitteiden saavuttamista.
         </p>
 
         <p>
-            Olen sairastanut ykköstyypin diabetesta
-            lapsuudesta asti, joten osaan ottaa
-            erittäin hyvin huomioon sen urheilussa
-            ja muutenkin. Osaan ottaa huomioon
-            muitakin tuki- ja liikuntaelinsairaudet,
-            ja räätälöidä valmennuksen niitten
-            mukaisesti sopivaksi.
+            Olen sairastanut ykköstyypin diabetesta lapsuudesta asti, joten osaan ottaa
+            erittäin hyvin huomioon sen urheilussa ja elämässä muutenkin.<br> 
+            Osaan ottaa huomioon myös muut tuki- ja liikuntaelinsairaudet sekä yleisimmät
+            ruokavalion rajoitteet ja ruokavaliot, kuten esimerkiksi gluteenittomuuden, 
+            maidottomuuden sekä vegaanisuuden, ja räätälöidä valmennuksen niiden mukaisesti 
+            sopivaksi.
         </p>
 
         </div>
@@ -340,62 +370,7 @@
 
 </footer>
 
-<script>
-function toggleMenu() {
-    // Etsitään valikko
-    const menu = document.querySelector('.overlay-menu');
-    
-    // classList.toggle hoitaa luokan lisäämisen ja poistamisen automaattisesti
-    menu.classList.toggle('open');
-}
-let current = 0;
-
-function openQuiz() {
-    document.querySelector(".quiz-section").style.display = "flex";
-    document.body.style.overflow = "hidden";
-}
-
-function closeQuiz() {
-    document.querySelector(".quiz-section").style.display = "none";
-    document.body.style.overflow = "auto";
-}
-
-function nextStep() {
-    const steps = document.querySelectorAll(".step");
-
-    steps[current].classList.remove("active");
-    current++;
-
-    if (current < steps.length) {
-        steps[current].classList.add("active");
-    }
-}
-
-function selectAnswer(field, value) {
-    const input = document.getElementById(field);
-
-    if (input) {
-        input.value = value;
-    }
-
-    nextStep();
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    const startBtn = document.getElementById("startQuizBtn");
-
-    if (startBtn) {
-        startBtn.addEventListener("click", openQuiz);
-    }
-});
-
-function closeQuiz() {
-    const quiz = document.querySelector(".quiz-section");
-    quiz.style.display = "none";
-    document.body.style.overflow = "auto";
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 
 </html>
