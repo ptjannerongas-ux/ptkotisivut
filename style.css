@@ -1782,13 +1782,14 @@ input {
     }
 }
 
+/* DESKTOP: näytä kaikki kuvat */
 .image-slider {
-    position: relative;
-    width: 100%;
+    display: grid;
+    gap: 22px;
 }
 
-.slide {
-    display: none;
+.image-slider .slide {
+    display: block;
     width: 100%;
     height: auto;
     max-height: 620px;
@@ -1798,29 +1799,57 @@ input {
     box-shadow: 0 30px 80px rgba(0,0,0,0.45);
 }
 
-.slide.active {
-    display: block;
-}
-
 .slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(0,0,0,0.55);
-    color: white;
-    font-size: 34px;
-    cursor: pointer;
-    z-index: 5;
+    display: none;
 }
 
-.slider-btn.prev {
-    left: 14px;
-}
+/* MOBILE: karuselli */
+@media (max-width: 768px) {
 
-.slider-btn.next {
-    right: 14px;
+    .image-slider {
+        position: relative;
+        display: block;
+    }
+
+    .image-slider .slide {
+        display: none;
+        width: 100%;
+        height: auto;
+        max-height: none;
+    }
+
+    .image-slider .slide.active {
+        display: block;
+    }
+
+    .slider-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 44px;
+        height: 44px;
+
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255,0.18);
+
+        background: rgba(0,0,0,0.6);
+        color: white;
+
+        font-size: 34px;
+        cursor: pointer;
+        z-index: 5;
+    }
+
+    .slider-btn.prev {
+        left: 12px;
+    }
+
+    .slider-btn.next {
+        right: 12px;
+    }
 }

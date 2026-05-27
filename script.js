@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 let slideIndex = 0;
 
 function showSlide(index) {
-    const slides = document.querySelectorAll(".slide");
+    const slides = document.querySelectorAll(".image-slider .slide");
 
     if (!slides.length) return;
 
