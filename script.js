@@ -100,10 +100,13 @@ function showSlide(index) {
     }
 
     slides.forEach(slide => {
-        slide.classList.remove("active");
-    });
+    slide.style.opacity = "0";
+    slide.classList.remove("active");
+});
 
     slides[slideIndex].classList.add("active");
+
+    slides[slideIndex].style.opacity = "1";
 }
 
 function changeSlide(direction) {

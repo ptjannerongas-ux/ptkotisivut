@@ -1817,6 +1817,7 @@ input {
         width: 100%;
         height: auto;
         border-radius: 28px;
+        transition: opacity 0.4s ease;
     }
 
     .image-slider .slide.active {
