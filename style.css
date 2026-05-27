@@ -1806,23 +1806,17 @@ input {
 /* MOBILE: karuselli */
 @media (max-width: 768px) {
 
-   .image-slider {
+    .image-slider {
         position: relative;
         width: 100%;
         overflow: hidden;
-        border-radius: 28px;
-        background: transparent;
     }
 
     .image-slider .slide {
         display: none;
         width: 100%;
         height: auto;
-        max-height: none;
-        object-fit: initial;
         border-radius: 28px;
-        box-shadow: none;
-        border: none;
     }
 
     .image-slider .slide.active {
@@ -1833,12 +1827,24 @@ input {
         display: flex;
         align-items: center;
         justify-content: center;
+
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 44px;
-        height: 44px;
+
+        width: 42px;
+        height: 42px;
+
         border-radius: 50%;
+
+        background: rgba(0,0,0,0.5);
+
+        backdrop-filter: blur(10px);
+
+        color: white;
+
+        border: 1px solid rgba(255,255,255,0.1);
+
         z-index: 5;
     }
 
