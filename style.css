@@ -1808,7 +1808,6 @@ input {
 
     .image-slider {
         position: relative;
-        display: block;
         width: 100%;
         aspect-ratio: 4 / 5;
         overflow: hidden;
@@ -1817,13 +1816,15 @@ input {
     }
 
     .image-slider .slide {
+        display: none;
         width: 100%;
         height: 100%;
+        max-height: none;
         object-fit: contain;
         object-position: center;
         border-radius: 28px;
         box-shadow: none;
-        max-height: none;
+        border: none;
     }
 
     .image-slider .slide.active {
@@ -1834,22 +1835,12 @@ input {
         display: flex;
         align-items: center;
         justify-content: center;
-
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-
         width: 44px;
         height: 44px;
-
         border-radius: 50%;
-        border: 1px solid rgba(255,255,255,0.18);
-
-        background: rgba(0,0,0,0.6);
-        color: white;
-
-        font-size: 34px;
-        cursor: pointer;
         z-index: 5;
     }
 
