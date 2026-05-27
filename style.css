@@ -1715,3 +1715,112 @@ input {
     color: white !important;
     text-decoration: none !important;
 }
+
+.contact-actions {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    width: 100%;
+}
+
+.contact-actions .btn {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    margin-top: 0;
+}
+
+/* SECONDARY BUTTON */
+.secondary-btn {
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    box-shadow: none;
+}
+
+.secondary-btn:hover {
+
+    background:
+        rgba(255,255,255,0.08);
+}
+
+.page-intro {
+
+    max-width: 720px;
+
+    margin:
+        24px auto 0;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #b5b5b5;
+}
+
+@media (max-width: 768px) {
+
+    .page-intro {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+
+        margin-top: 20px;
+    }
+}
+
+.image-slider {
+    position: relative;
+    width: 100%;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: auto;
+    max-height: 620px;
+    object-fit: contain;
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+}
+
+.slide.active {
+    display: block;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(0,0,0,0.55);
+    color: white;
+    font-size: 34px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.slider-btn.prev {
+    left: 14px;
+}
+
+.slider-btn.next {
+    right: 14px;
+}
