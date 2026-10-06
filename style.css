@@ -1857,3 +1857,29 @@ input {
         right: 12px;
     }
 }
+/* =========================
+   QUIZ QUESTION HEADINGS
+========================= */
+
+.quiz-container .step h2 {
+    display: block;
+    width: 100%;
+    margin: 0 0 28px;
+    padding: 0;
+    color: #ffffff !important;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+@media (max-width: 768px) {
+
+    .quiz-container .step h2 {
+        font-size: 28px;
+        line-height: 1.25;
+        margin-bottom: 24px;
+    }
+
+}
